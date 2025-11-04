@@ -1,0 +1,39 @@
+{
+  "name": "pastebin-cli",
+  "version": "1.0.0",
+  "description": "Full-featured CLI tool for managing Pastebin",
+  "main": "bin/pastebin.js",
+  "bin": {
+    "pastebin": "./bin/pastebin.js"
+  },
+  "scripts": {
+    "start": "node bin/pastebin.js",
+    "build": "pkg . --targets node18-linux-x64,node18-linux-arm64 --output-path dist/"
+  },
+"pkg": {
+  "assets": [
+    "node_modules/open/xdg-open",
+    "lib/**/*"
+  ],
+  "scripts": [
+    "bin/**/*.js"
+  ]
+},
+  "dependencies": {
+    "@pnpm/tabtab": "^0.5.4",
+    "axios": "^0.21.1",
+    "chalk": "^4.1.2",
+    "commander": "^7.2.0",
+    "form-data": "^4.0.4",
+    "inquirer": "^8.2.4",
+    "open": "^8.4.0"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "author": "FarizzDev",
+  "license": "MIT",
+  "devDependencies": {
+    "pkg": "^5.8.1"
+  }
+}
